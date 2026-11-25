@@ -1,63 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const movie = "/climatrix/climate-systems.webm";
-
-export function MotionStrip() {
-  const strip = useRef<HTMLDivElement>(null);
-  const [paused, setPaused] = useState(false);
-  useEffect(() => {
-    const node = strip.current!;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let visible = true;
-    function update() {
-      node.querySelectorAll("video").forEach((video) => {
-        if (visible && !paused && !reduced.matches)
-          void video.play().catch(() => {});
-        else video.pause();
-      });
-    }
-    const observer = new IntersectionObserver(([entry]) => {
-      visible = entry.isIntersecting;
-      update();
-    });
-    observer.observe(node);
-    update();
-    reduced.addEventListener("change", update);
-    return () => {
-      observer.disconnect();
-      reduced.removeEventListener("change", update);
-    };
-  }, [paused]);
-  return (
-    <div
-      className="motion-strip"
-      ref={strip}
-      aria-label="Climatrix HVAC equipment and field work"
-    >
-      {[0, 1, 2].map((i) => (
-        <video
-          key={i}
-          muted
-          playsInline
-          loop
-          preload="none"
-          poster="/climatrix/engineer.webp"
-          src={movie}
-          aria-hidden="true"
-        />
-      ))}
-      <button
-        className="motion-control"
-        onClick={() => setPaused(!paused)}
-        aria-label={paused ? "Play motion" : "Pause motion"}
-      >
-        {paused ? "▶" : "Ⅱ"}
-      </button>
-    </div>
-  );
-}
 
 export function Film() {
   const modal = useRef<HTMLDialogElement>(null);

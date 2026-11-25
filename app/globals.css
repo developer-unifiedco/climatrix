@@ -190,16 +190,6 @@ main {
   margin: 0 15px;
   padding-top: 63px;
 }
-.opening {
-  padding: 20px 20px 160px;
-  scroll-margin-top: 85px;
-}
-.opening h1 img {
-  width: 100%;
-  height: auto;
-  display: block;
-  animation: unmask 0.85s ease-out both;
-}
 @keyframes unmask {
   from {
     clip-path: inset(0 100% 0 0);
@@ -207,65 +197,6 @@ main {
   to {
     clip-path: inset(0);
   }
-}
-.spec {
-  width: 48.75%;
-  margin: 28px 0 30px auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  min-height: 123px;
-  font: bold clamp(15px, 1.25vw, 21px) / 1.36 Arial;
-  letter-spacing: 0.005em;
-}
-.spec strong {
-  font-size: clamp(22px, 2vw, 32px);
-  line-height: 1.08;
-  letter-spacing: -0.035em;
-}
-.swatches {
-  display: flex;
-  margin-top: 9px;
-  gap: 3px;
-}
-.swatches i {
-  width: 23px;
-  height: 5px;
-  background: var(--blue);
-}
-.swatches i + i {
-  background: var(--red);
-}
-.motion-strip {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 6px;
-  aspect-ratio: 1340/580;
-  overflow: hidden;
-}
-.motion-strip video {
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  object-fit: cover;
-  object-position: 93% 50%;
-  background: #d5d7da;
-}
-.motion-control {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background: white;
-  border: 1px solid;
-  width: 34px;
-  height: 32px;
-  font: 17px var(--mono);
-  opacity: 0;
-}
-.motion-strip:hover button,
-.motion-control:focus-visible {
-  opacity: 1;
 }
 .section {
   position: relative;
@@ -561,9 +492,6 @@ dialog::backdrop {
   .service-grid {
     gap: 14px;
   }
-  .spec {
-    width: 60%;
-  }
 }
 @media (max-width: 768px) {
   html {
@@ -653,30 +581,6 @@ dialog::backdrop {
   main {
     padding-top: 71px;
   }
-  .opening {
-    padding: 0 10px 119px;
-  }
-  .opening h1 {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-  }
-  .spec {
-    display: none;
-  }
-  .motion-strip {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-    aspect-ratio: 340/585;
-  }
-  .motion-strip video {
-    object-position: center;
-  }
-  .motion-control {
-    opacity: 0.9;
-  }
   .section {
     padding: 0 10px;
     margin-bottom: 80px;
@@ -765,9 +669,6 @@ dialog::backdrop {
   .ruler-right {
     animation: vertical-reveal 0.55s ease-out both;
   }
-  .motion-strip {
-    animation: unmask 0.75s 0.15s ease-out both;
-  }
   @keyframes vertical-reveal {
     from {
       clip-path: inset(0 0 100% 0);
@@ -786,8 +687,5 @@ dialog::backdrop {
   *::after {
     animation: none !important;
     transition: none !important;
-  }
-  .motion-control {
-    display: none;
   }
 }

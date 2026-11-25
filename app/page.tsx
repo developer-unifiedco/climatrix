@@ -1,7 +1,9 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { ClimateHero, PageMotion } from "./climate-hero";
+import "./climate-motion.css";
 import SiteFrame from "./site-frame";
-import { Consultation, Film, MotionStrip } from "./media";
+import { Consultation, Film } from "./media";
 
 function Photo({ name, alt }: { name: string; alt: string }) {
   return (
@@ -44,7 +46,9 @@ function Title({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div className="section-title">
       <p>{label}</p>
-      <h2>{children}</h2>
+      <h2>
+        <span>{children}</span>
+      </h2>
     </div>
   );
 }
@@ -87,43 +91,8 @@ export default function Home() {
     <>
       <SiteFrame />
       <main id="main">
-        <div className="opening" id="home">
-          <h1>
-            <Image
-              src="/climatrix/wordmark.png"
-              width={2200}
-              height={294}
-              alt="Climatrix"
-              preload
-            />
-          </h1>
-          <div className="spec">
-            <strong>
-              CLIMATE
-              <br />
-              CONTROL
-              <br />
-              SYSTEMS
-            </strong>
-            <div>
-              [ ] Cooling
-              <br />[ ] Ventilation
-              <br />[ ] Air quality
-              <br />[ ] System care
-            </div>
-            <div>
-              HVAC Solutions
-              <br />
-              Saudi Arabia
-              <br />
-              <span className="swatches" aria-hidden="true">
-                <i />
-                <i />
-              </span>
-            </div>
-          </div>
-          <MotionStrip />
-        </div>
+        <ClimateHero />
+        <PageMotion />
 
         <Section id="vision" label="OUR VISION">
           <Title label="OUR VISION">
