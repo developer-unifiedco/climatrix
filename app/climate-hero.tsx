@@ -66,8 +66,8 @@ export function ClimateHero() {
           <div className="hero-image">
             <Image
               ref={photo}
-              src="/climatrix/cooling.webp"
-              alt="Blue heat-exchanger fins alongside copper refrigerant coils"
+              src="/climatrix/pavilion-gallery.webp"
+              alt="A curved air diffuser follows the limestone ceiling of a sunlit pavilion gallery"
               fill
               sizes="100vw"
               preload

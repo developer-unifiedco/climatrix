@@ -89,7 +89,7 @@
 }
 .hero-image img {
   object-fit: cover;
-  object-position: 75% center;
+  object-position: 42% center;
 }
 .hero-foot {
   position: relative;
@@ -152,9 +152,6 @@
   .hero-message p {
     font-size: 15px;
     max-width: 32ch;
-  }
-  .hero-image img {
-    object-position: 80% center;
   }
   .hero-edition,
   .hero-foot {
